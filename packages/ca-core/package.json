@@ -1,0 +1,55 @@
+{
+  "name": "@composablearchitecture.io/core",
+  "type": "module",
+  "version": "0.1.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "description": "Pure TypeScript core of the Composable Architecture: Store, Reducer, Effect, Lens, Prism.",
+  "author": "Gaetano D'Agostino",
+  "license": "MIT",
+  "homepage": "https://github.com/composablearchitecture-io/typescript/tree/main/packages/ca-core#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/composablearchitecture-io/typescript.git",
+    "directory": "packages/ca-core"
+  },
+  "bugs": {
+    "url": "https://github.com/composablearchitecture-io/typescript/issues"
+  },
+  "keywords": [
+    "composable-architecture",
+    "tca",
+    "state-management",
+    "reducer",
+    "effects",
+    "lens",
+    "observable",
+    "typescript"
+  ],
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@sinonjs/fake-timers": "^14.0.0",
+    "@types/sinonjs__fake-timers": "^8.1.5",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vitest": "catalog:"
+  }
+}

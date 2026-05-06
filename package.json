@@ -1,0 +1,25 @@
+{
+	"name": "composable-architecture",
+	"private": true,
+	"license": "MIT",
+	"author": "Gaetano D'Agostino",
+	"description": "Composable Architecture port for the TypeScript / JavaScript ecosystem.",
+	"homepage": "https://github.com/composablearchitecture-io/typescript#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/composablearchitecture-io/typescript.git"
+	},
+	"bugs": {
+		"url": "https://github.com/composablearchitecture-io/typescript/issues"
+	},
+	"scripts": {
+		"build": "pnpm -r --filter \"./packages/*\" build",
+		"test": "pnpm -r --filter \"./packages/*\" test",
+		"typedoc": "typedoc",
+		"release:dry": "pnpm build && pnpm -r --filter \"./packages/*\" publish --dry-run --no-git-checks",
+		"release": "pnpm build && pnpm -r --filter \"./packages/*\" publish"
+	},
+	"devDependencies": {
+		"typedoc": "^0.28.16"
+	}
+}

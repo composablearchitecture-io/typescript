@@ -1,0 +1,63 @@
+{
+  "name": "@composablearchitecture.io/react",
+  "type": "module",
+  "version": "0.1.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "description": "React bindings for the Composable Architecture. Re-exports @composablearchitecture.io/core.",
+  "author": "Gaetano D'Agostino",
+  "license": "MIT",
+  "homepage": "https://github.com/composablearchitecture-io/typescript/tree/main/packages/ca-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/composablearchitecture-io/typescript.git",
+    "directory": "packages/ca-react"
+  },
+  "bugs": {
+    "url": "https://github.com/composablearchitecture-io/typescript/issues"
+  },
+  "keywords": [
+    "composable-architecture",
+    "tca",
+    "react",
+    "state-management",
+    "reducer",
+    "effects",
+    "typescript"
+  ],
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@composablearchitecture.io/core": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/deep-equal": "^1.0.4",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0 || ^19",
+    "react": "^18.0 || ^19"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  }
+}
