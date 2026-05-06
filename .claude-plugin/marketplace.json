@@ -1,0 +1,19 @@
+{
+  "name": "composable-architecture-marketplace",
+  "owner": {
+    "name": "dagyu",
+    "email": "dagyu@composablearchitecture.io"
+  },
+  "metadata": {
+    "description": "Skills for building apps with the Composable Architecture pattern in TypeScript / React",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "composable-architecture-typescript",
+      "source": "./",
+      "description": "Scaffolding and guidance for the Composable Architecture pattern — features, reducers, effects, and store scoping for TypeScript / React",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "composable-architecture-typescript",
+  "version": "0.1.0",
+  "description": "Claude Code skills for the Composable Architecture pattern in TypeScript / React — scaffolding features, reducers, effects, and store scoping on top of @composablearchitecture.io/{core,react}.",
+  "skills": [
+    "./skills/init-project",
+    "./skills/create-feature",
+    "./skills/create-reducer",
+    "./skills/add-effect",
+    "./skills/scope-store"
+  ]
+}
