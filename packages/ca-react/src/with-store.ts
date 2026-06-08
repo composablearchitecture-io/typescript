@@ -224,7 +224,11 @@ export class WithStore<State, Action> extends React.Component<
   }
 
   render() {
-    return this.props.children(this.state.currentState, this.store.send);
+    // Bind `send` so callers can use it as a standalone function (e.g. passed
+    // directly to an onClick) without losing the store's `this` context.
+    return this.props.children(this.state.currentState, (action) =>
+      this.store.send(action),
+    );
   }
 
 
