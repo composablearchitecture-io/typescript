@@ -548,19 +548,23 @@ class PromiseEffect<Value> extends Effect<Value> {
 
   override async run(handler: EffectHandler<Value>): Promise<void> {
     if (!handler.guard()) return;
-    let value: Value;
-    const cancellablePromise = new CancellablePromise(this.runner());
-    this.runner().then((v) => {
-      value = v;
-      handler.emit(value);
-    }).catch((error) => {
-      if (this.options) {
-        value = this.options.onError(error);
+    // Invoke the runner exactly ONCE and share that single promise with both
+    // the cancellable wrapper and the emit handler. (Previously the runner was
+    // called twice — here and again in `.then(...)` — which executed every
+    // async task, e.g. a POST request, twice.)
+    const promise = this.runner();
+    const cancellablePromise = new CancellablePromise(promise);
+    promise
+      .then((value) => {
         handler.emit(value);
-      } else {
-        throw error;
-      }
-    });
+      })
+      .catch((error) => {
+        if (this.options) {
+          handler.emit(this.options.onError(error));
+        } else {
+          throw error;
+        }
+      });
     handler.register(cancellablePromise);
   }
 }
